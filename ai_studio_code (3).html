@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapper Dave's | Premium Barber Lounge</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#111111',
+                        blacker: '#000000',
+                        accent: '#f97316',
+                    },
+                    fontFamily: {
+                        oswald: ['Oswald', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-accent': 'linear-gradient(to right, #ea580c, #dc2626)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ea580c;
+        }
+    </style>
+</head>
+<body class="font-inter antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-white/10 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-oswald text-2xl md:text-3xl font-bold tracking-wider text-white uppercase flex items-center gap-2">
+                <i class="fa-solid fa-scissors text-orange-500 text-xl md:text-2xl"></i>
+                Dapper Dave's
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#lounge-container" class="font-oswald text-sm tracking-widest uppercase hover:text-orange-500 transition-colors">The Lounge</a>
+                <a href="#services" class="font-oswald text-sm tracking-widest uppercase hover:text-orange-500 transition-colors">Services</a>
+                <a href="#visit" class="font-oswald text-sm tracking-widest uppercase hover:text-orange-500 transition-colors">Visit</a>
+                <a href="#" class="text-xl hover:text-orange-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <div class="md:hidden text-2xl cursor-pointer hover:text-orange-500 transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image (LA Sunset Street) -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1501426026826-31c667bdf23d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center flex flex-col items-center px-4">
+            <h2 class="hero-text font-inter text-orange-500 tracking-[0.3em] uppercase text-sm md:text-lg mb-4 font-semibold">Barber Lounge</h2>
+            <h1 class="hero-text font-oswald text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter uppercase mb-2">
+                Dapper Dave's
+            </h1>
+            <p class="hero-text font-inter text-gray-300 text-lg md:text-2xl font-light italic mb-10">Where classic meets sharp.</p>
+            <a href="#visit" class="hero-text bg-gradient-accent hover:opacity-90 text-white font-oswald text-lg tracking-widest uppercase py-4 px-10 rounded-sm transition-all shadow-[0_0_20px_rgba(234,88,12,0.4)] hover:shadow-[0_0_30px_rgba(234,88,12,0.7)] hover:-translate-y-1">
+                Take Your Throne
+            </a>
+        </div>
+    </header>
+
+    <!-- Pinned ScrollTrigger Section: The Lounge -->
+    <section id="lounge-container" class="relative w-full h-screen bg-black overflow-hidden">
+        
+        <!-- Backgrounds Container -->
+        <div class="absolute inset-0 w-full h-full z-0">
+            <!-- Slide 1 BG: Empty vintage barber chairs -->
+            <div class="slide-bg slide-bg-0 absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+            <!-- Slide 2 BG: Barber cutting hair -->
+            <div class="slide-bg slide-bg-1 absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+            <!-- Slide 3 BG: Fresh fade haircut -->
+            <div class="slide-bg slide-bg-2 absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+            <!-- Slide 4 BG: Classic car -->
+            <div class="slide-bg slide-bg-3 absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+            <!-- Slide 5 BG: Neon sign -->
+            <div class="slide-bg slide-bg-4 absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('https://images.unsplash.com/photo-1563298723-dcfebaa392e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+            
+            <!-- Universal Dark Overlay -->
+            <div class="absolute inset-0 bg-black/70"></div>
+        </div>
+
+        <!-- Texts Container -->
+        <div class="relative z-10 w-full h-full flex items-center justify-center text-center px-4">
+            
+            <!-- Slide 1 Text -->
+            <div class="slide-text slide-text-0 absolute flex flex-col items-center">
+                <h2 class="font-oswald text-5xl md:text-8xl font-bold uppercase tracking-tight text-white drop-shadow-2xl">Step Inside</h2>
+                <p class="font-inter text-xl md:text-3xl text-orange-500 uppercase tracking-[0.4em] mt-4 font-semibold">Where Kings Sit</p>
+            </div>
+
+            <!-- Slide 2 Text -->
+            <div class="slide-text slide-text-1 absolute flex flex-col items-center opacity-0 invisible">
+                <h2 class="font-oswald text-5xl md:text-8xl font-bold uppercase tracking-tight text-white drop-shadow-2xl">Every Line</h2>
+                <p class="font-inter text-xl md:text-3xl text-orange-500 uppercase tracking-[0.4em] mt-4 font-semibold">Intentional</p>
+            </div>
+
+            <!-- Slide 3 Text -->
+            <div class="slide-text slide-text-2 absolute flex flex-col items-center opacity-0 invisible">
+                <h2 class="font-oswald text-5xl md:text-8xl font-bold uppercase tracking-tight text-white drop-shadow-2xl">Walk Out</h2>
+                <p class="font-inter text-xl md:text-3xl text-orange-500 uppercase tracking-[0.4em] mt-4 font-semibold">Sharper</p>
+            </div>
+
+            <!-- Slide 4 Text -->
+            <div class="slide-text slide-text-3 absolute flex flex-col items-center opacity-0 invisible">
+                <h2 class="font-oswald text-5xl md:text-8xl font-bold uppercase tracking-tight text-white drop-shadow-2xl">More Than</h2>
+                <p class="font-inter text-xl md:text-3xl text-orange-500 uppercase tracking-[0.4em] mt-4 font-semibold">A Cut</p>
+            </div>
+
+            <!-- Slide 5 Text -->
+            <div class="slide-text slide-text-4 absolute flex flex-col items-center opacity-0 invisible">
+                <h2 class="font-oswald text-6xl md:text-9xl font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-accent drop-shadow-[0_0_15px_rgba(234,88,12,0.5)]">Take Your Throne</h2>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="services" class="relative w-full bg-dark py-24 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-oswald text-4xl md:text-6xl font-bold tracking-wider uppercase mb-4">Services & Pricing</h2>
+                <div class="w-24 h-1 bg-gradient-accent mx-auto"></div>
+            </div>
+
+            <!-- CSS Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                
+                <!-- Item 1 -->
+                <div class="flex flex-col border-b border-gray-800 pb-6 group cursor-pointer hover:border-orange-500 transition-colors duration-300">
+                    <div class="flex justify-between items-end mb-2">
+                        <h3 class="font-oswald text-2xl md:text-3xl text-white group-hover:text-orange-500 transition-colors uppercase tracking-wide">Signature Cut</h3>
+                        <span class="font-oswald text-xl md:text-2xl text-orange-500">$45</span>
+                    </div>
+                    <p class="text-gray-400 font-inter text-sm md:text-base font-light leading-relaxed">Precision cut, tailored to your head shape, hair type, and personal lifestyle. Finished with styling and a hot neck shave.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="flex flex-col border-b border-gray-800 pb-6 group cursor-pointer hover:border-orange-500 transition-colors duration-300">
+                    <div class="flex justify-between items-end mb-2">
+                        <h3 class="font-oswald text-2xl md:text-3xl text-white group-hover:text-orange-500 transition-colors uppercase tracking-wide">Line Up</h3>
+                        <span class="font-oswald text-xl md:text-2xl text-orange-500">$25</span>
+                    </div>
+                    <p class="text-gray-400 font-inter text-sm md:text-base font-light leading-relaxed">Crisp edges around the hairline and neck. Straight razor finish for maximum sharpness.</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="flex flex-col border-b border-gray-800 pb-6 group cursor-pointer hover:border-orange-500 transition-colors duration-300">
+                    <div class="flex justify-between items-end mb-2">
+                        <h3 class="font-oswald text-2xl md:text-3xl text-white group-hover:text-orange-500 transition-colors uppercase tracking-wide">Beard Sculpt</h3>
+                        <span class="font-oswald text-xl md:text-2xl text-orange-500">$35</span>
+                    </div>
+                    <p class="text-gray-400 font-inter text-sm md:text-base font-light leading-relaxed">Detailed trimming, shaping, and fading. Includes a relaxing hot towel and straight razor line up.</p>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="flex flex-col border-b border-gray-800 pb-6 group cursor-pointer hover:border-orange-500 transition-colors duration-300">
+                    <div class="flex justify-between items-end mb-2">
+                        <h3 class="font-oswald text-2xl md:text-3xl text-white group-hover:text-orange-500 transition-colors uppercase tracking-wide">The Full Experience</h3>
+                        <span class="font-oswald text-xl md:text-2xl text-orange-500">$75</span>
+                    </div>
+                    <p class="text-gray-400 font-inter text-sm md:text-base font-light leading-relaxed">The ultimate package: Signature Cut, Beard Sculpt, purifying black mask, and an extended scalp massage.</p>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="flex flex-col border-b border-gray-800 pb-6 group cursor-pointer hover:border-orange-500 transition-colors duration-300">
+                    <div class="flex justify-between items-end mb-2">
+                        <h3 class="font-oswald text-2xl md:text-3xl text-white group-hover:text-orange-500 transition-colors uppercase tracking-wide">Ear & Nose Waxing</h3>
+                        <span class="font-oswald text-xl md:text-2xl text-orange-500">$15</span>
+                    </div>
+                    <p class="text-gray-400 font-inter text-sm md:text-base font-light leading-relaxed">Quick and practically painless hair removal for a pristine, clean look.</p>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="flex flex-col border-b border-gray-800 pb-6 group cursor-pointer hover:border-orange-500 transition-colors duration-300">
+                    <div class="flex justify-between items-end mb-2">
+                        <h3 class="font-oswald text-2xl md:text-3xl text-white group-hover:text-orange-500 transition-colors uppercase tracking-wide">Grey Camouflage</h3>
+                        <span class="font-oswald text-xl md:text-2xl text-orange-500">$40</span>
+                    </div>
+                    <p class="text-gray-400 font-inter text-sm md:text-base font-light leading-relaxed">Subtle, natural-looking color blending applied at the wash bowl to gently mask greys.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit / Location Section -->
+    <section id="visit" class="relative w-full bg-black py-24 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-oswald text-6xl md:text-8xl font-bold tracking-tighter uppercase mb-12 text-center md:text-left text-white drop-shadow-md">
+                Pull <span class="text-transparent bg-clip-text bg-gradient-accent">Up</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Info Column -->
+                <div class="flex flex-col space-y-8 bg-dark p-8 md:p-12 rounded-xl border border-white/5 shadow-2xl">
+                    <!-- Hours -->
+                    <div>
+                        <h4 class="font-oswald text-orange-500 text-xl tracking-widest uppercase mb-3"><i class="fa-regular fa-clock mr-2"></i> Hours</h4>
+                        <ul class="text-gray-300 font-inter font-light space-y-2">
+                            <li class="flex justify-between border-b border-gray-800 pb-1"><span>Tuesday - Friday</span> <span>9:00 AM - 8:00 PM</span></li>
+                            <li class="flex justify-between border-b border-gray-800 pb-1"><span>Saturday</span> <span>8:00 AM - 6:00 PM</span></li>
+                            <li class="flex justify-between border-b border-gray-800 pb-1"><span>Sunday</span> <span>10:00 AM - 4:00 PM</span></li>
+                            <li class="flex justify-between text-gray-500 pb-1"><span>Monday</span> <span>Closed</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div>
+                        <h4 class="font-oswald text-orange-500 text-xl tracking-widest uppercase mb-3"><i class="fa-solid fa-location-dot mr-2"></i> Location</h4>
+                        <p class="text-gray-300 font-inter font-light text-lg">
+                            1234 Clipper Lane<br>
+                            Los Angeles, CA 90015
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h4 class="font-oswald text-orange-500 text-xl tracking-widest uppercase mb-3"><i class="fa-solid fa-phone mr-2"></i> Contact</h4>
+                        <p class="text-white font-oswald text-3xl tracking-wider mb-6">(310) 555-0198</p>
+                        
+                        <a href="tel:+13105550198" class="inline-block text-center w-full bg-gradient-accent hover:opacity-90 text-white font-oswald text-lg tracking-widest uppercase py-4 px-8 rounded-sm transition-all shadow-[0_0_15px_rgba(234,88,12,0.3)] hover:shadow-[0_0_25px_rgba(234,88,12,0.6)]">
+                            Call To Book
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Column -->
+                <div class="w-full h-[400px] md:h-[600px] rounded-xl overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
+                    <!-- Standard Google Map Embed mapping to a generic LA coordinates for styling purpose -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105652.61053183574!2d-118.34913388701546!3d34.04153093282215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-900 text-center">
+        <p class="font-inter text-gray-600 text-sm">
+            &copy; 2026 Dapper Dave's Barber Lounge. All Rights Reserved. Stay Sharp.
+        </p>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Animation Script -->
+    <script>
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- 1. Hero Load Animation ---
+        window.addEventListener("load", () => {
+            gsap.from(".hero-text", {
+                y: 50,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.2,
+                ease: "power3.out",
+                delay: 0.2
+            });
+        });
+
+        // --- 2. The Lounge Pinned Scroll Animation ---
+        // Setup the timeline mapped to the scroll progress
+        const loungeTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#lounge-container",
+                start: "top top",
+                end: "+=400%", // Give it a long scroll distance to accommodate 5 slides
+                pin: true,
+                scrub: 1, // Smooth scrubbing
+            }
+        });
+
+        // We have 5 slides (index 0 to 4)
+        const totalSlides = 5;
+
+        // Loop to create the sequential crossfade effect
+        for (let i = 1; i < totalSlides; i++) {
+            
+            // At 'step i', fade OUT the PREVIOUS text
+            loungeTl.to(`.slide-text-${i - 1}`, {
+                y: -50,
+                opacity: 0,
+                autoAlpha: 0, // handles visibility hidden as well
+                duration: 1
+            }, `step${i}`);
+
+            // At 'step i', fade IN the CURRENT background image
+            loungeTl.to(`.slide-bg-${i}`, {
+                opacity: 1,
+                duration: 1
+            }, `step${i}`);
+
+            // At 'step i', fade IN the CURRENT text
+            loungeTl.fromTo(`.slide-text-${i}`, 
+                { y: 50, opacity: 0, autoAlpha: 0 },
+                { y: 0, opacity: 1, autoAlpha: 1, duration: 1 }, 
+                `step${i}`
+            );
+        }
+
+        // Add a tiny buffer at the end of the timeline so the last slide sits for a moment before unpinning
+        loungeTl.to({}, { duration: 0.5 });
+
+
+        // --- Extras: Services Fade In ---
+        gsap.utils.toArray("#services .flex-col").forEach(service => {
+            gsap.from(service, {
+                scrollTrigger: {
+                    trigger: service,
+                    start: "top 85%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
+
+    </script>
+</body>
+</html>
